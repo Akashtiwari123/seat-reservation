@@ -1,0 +1,27 @@
+server:
+  port: ${PORT:8080}
+  tomcat:
+    threads.max: 300
+    accept-count: 20000
+    max-connections: 20000
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:seats}
+    username: ${DB_USER:seats}
+    password: ${DB_PASSWORD:seats}
+    hikari:
+      maximum-pool-size: ${DB_POOL:40}
+      connection-timeout: 120000
+  sql.init.mode: always
+  jackson.property-naming-strategy: SNAKE_CASE
+management:
+  endpoints:
+    web:
+      base-path: /
+      exposure.include: prometheus
+      path-mapping.prometheus: metrics
+logging:
+  structured.format.console: logstash
+app:
+  admin-token: ${ADMIN_TOKEN:admin-token}
+  token-secret: ${TOKEN_SECRET:dev-secret-change-me}
