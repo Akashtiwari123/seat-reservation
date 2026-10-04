@@ -1,0 +1,20 @@
+databases:
+  - name: seats-db
+    plan: free
+    databaseName: seats
+    user: seats
+services:
+  - type: web
+    name: seat-reservation
+    runtime: docker
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - { key: DB_HOST, fromDatabase: { name: seats-db, property: host } }
+      - { key: DB_PORT, fromDatabase: { name: seats-db, property: port } }
+      - { key: DB_NAME, fromDatabase: { name: seats-db, property: database } }
+      - { key: DB_USER, fromDatabase: { name: seats-db, property: user } }
+      - { key: DB_PASSWORD, fromDatabase: { name: seats-db, property: password } }
+      - { key: DB_POOL, value: "20" }
+      - { key: TOKEN_SECRET, generateValue: true }
+      - { key: ADMIN_TOKEN, sync: false }
