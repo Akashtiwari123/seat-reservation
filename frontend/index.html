@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Seat reservation</title>
+<style>
+  body{font-family:system-ui,sans-serif;margin:0;background:#f6f7f9;color:#1b1f24}
+  main{max-width:960px;margin:0 auto;padding:16px}
+  section{background:#fff;border:1px solid #d9dde3;border-radius:6px;padding:12px 16px;margin-bottom:12px}
+  h1{font-size:20px} h2{font-size:15px;margin:0 0 8px}
+  input,button{font:inherit;padding:6px 8px;margin:2px}
+  button{cursor:pointer} button:focus-visible,input:focus-visible{outline:2px solid #1d4ed8}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:4px}
+  .seat{padding:6px 0;text-align:center;border-radius:4px;border:1px solid #9aa4b2;background:#e8f5e9;font-size:12px}
+  .seat.confirmed,.seat.held{background:#e5e7eb;color:#6b7280;border-color:#d1d5db;cursor:not-allowed}
+  .seat.sel{background:#1d4ed8;color:#fff;border-color:#1d4ed8}
+  .log{font-family:ui-monospace,monospace;font-size:12px;white-space:pre-wrap}
+</style>
+</head>
+<body><div id="root"></div><script type="module" src="/src/main.jsx"></script></body>
+</html>
