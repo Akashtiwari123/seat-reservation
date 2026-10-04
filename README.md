@@ -6,11 +6,11 @@ A JSON HTTP service that sells assigned seats for a show and stays correct when 
 
 | | |
 |---|---|
-| **Live URL** | `<https://YOUR-APP.onrender.com>` |
-| **Health / readiness** | `<LIVE_URL>/healthz` , `<LIVE_URL>/readyz` |
-| **Metrics (Prometheus)** | `<LIVE_URL>/metrics` |
-| **Logs** | `<Render dashboard > seat-reservation > Logs>` (structured JSON). `<Public log link or screen-recording link, if any>` |
-| **Admin token** | `<provided in the submission message>` (local default: `admin-token`) |
+| **Live URL** | `https://seat-reservation-1f2k.onrender.com` |
+| **Health / readiness** | `https://seat-reservation-1f2k.onrender.com/healthz` , `https://seat-reservation-1f2k.onrender.com/readyz` |
+| **Metrics (Prometheus)** | `https://seat-reservation-1f2k.onrender.com/metrics` |
+| **Logs** | `<Render dashboard > seat-reservation > Logs>` (structured JSON). `https://dashboard.render.com/web/srv-db15pom0tbcc739lpf10/logs?t=app&r=1h` |
+| **Admin token** | `<provided in the email>` (local default: `admin-token`) |
 | **Design write-up** | [WRITEUP.md](WRITEUP.md) |
 
 ---
