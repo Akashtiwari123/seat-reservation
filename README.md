@@ -10,6 +10,7 @@ A JSON HTTP service that sells assigned seats for a show and stays correct when 
 | **Health / readiness** | `https://seat-reservation-1f2k.onrender.com/healthz` , `https://seat-reservation-1f2k.onrender.com/readyz` |
 | **Metrics (Prometheus)** | `https://seat-reservation-1f2k.onrender.com/metrics` |
 | **Logs** | `<Render dashboard > seat-reservation > Logs>` (structured JSON). `https://dashboard.render.com/web/srv-db15pom0tbcc739lpf10/logs?t=app&r=1h` |
+![alt text](image.png)
 | **Admin token** | `<provided in the email>` (local default: `admin-token`) |
 | **Design write-up** | [WRITEUP.md](WRITEUP.md) |
 
@@ -35,7 +36,7 @@ docker run --rm -v "$PWD/scripts":/s eclipse-temurin:17 java /s/Burst.java http:
 
 ```bash
 ./burst.sh <BASE_URL>                      # or: make burst URL=<BASE_URL>
-ADMIN_TOKEN=<token> ./burst.sh https://YOUR-APP.onrender.com    # against the live service
+ADMIN_TOKEN=<token> ./burst.sh https://seat-reservation-1f2k.onrender.com    # against the live service
 ```
 Requires **JDK 17** (`java scripts/Burst.java`; it uses the single-file launcher, so no separate compile step). On macOS/Linux run `ulimit -n 4096` first. Use `java -Dthreads=200 scripts/Burst.java <URL>` to lower client concurrency.
 
